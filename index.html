@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Passeio Fotográfico 2026 — Aprendizagem</title>
+<style>
+:root{
+  --blue:#06458b;
+  --blue-dark:#092b49;
+  --orange:#f7941d;
+  --cream:#f3f0e9;
+  --paper:#fffdf8;
+  --gray:#d8d6d0;
+  --gray-dark:#77756f;
+  --black:#171717;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; color:var(--blue-dark);
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%,#fff 0,#fff8 22%,transparent 42%),
+    linear-gradient(135deg,#eeeae2,#faf9f5 48%,#e8e4dc);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;
+  background-image:radial-gradient(#8d8a83 0.6px,transparent .6px);background-size:7px 7px;
+}
+.app{width:min(1180px,100%);margin:auto;padding:24px 22px 42px;position:relative}
+header{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px;
+  padding:0 8px;
+}
+header h1{margin:0;font-size:22px;font-weight:900;color:var(--blue-dark)}
+header p{margin:5px 0 0;color:#666;font-size:13px}
+.brand{display:flex;align-items:center;gap:12px}.brand img{height:38px;width:auto}
+.studio{display:grid;grid-template-columns:minmax(390px,520px) 1fr;gap:42px;align-items:center}
+
+/* CÂMERA POLAROID */
+.camera-shell{position:relative;padding:34px 8px 70px}
+.camera{
+  position:relative;background:linear-gradient(145deg,#f8f7f2,#deddd8);
+  border:1px solid #bdbbb5;border-radius:30px 30px 42px 42px;padding:34px 30px 30px;
+  box-shadow:0 28px 45px #0003, inset 0 2px 0 #fff, inset 0 -8px 20px #00000010;
+}
+.camera:before{
+  content:"";position:absolute;left:55px;right:55px;top:-17px;height:44px;border-radius:14px 14px 4px 4px;
+  background:linear-gradient(#f7f6f2,#deddd8);border:1px solid #bbb9b2;border-bottom:0;
+  box-shadow:inset 0 2px 0 #fff;
+}
+.camera:after{
+  content:"";position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);width:160px;height:34px;
+  background:var(--paper);border:1px solid #d8d4cb;border-top:0;border-radius:0 0 8px 8px;
+  box-shadow:0 8px 15px #0002;
+}
+.viewfinder{position:absolute;right:75px;top:0;width:74px;height:38px;border-radius:5px;background:#222;border:5px solid #444;box-shadow:inset 0 0 0 3px #111;z-index:2}
+.flash{position:absolute;left:70px;top:-4px;width:86px;height:28px;border-radius:7px 7px 3px 3px;background:#eee;border:1px solid #aaa;z-index:2}
+.flash:after{content:"";display:block;width:55px;height:7px;margin:8px auto;background:#cfcfcf;border-radius:5px}
+.camera-label{position:absolute;top:15px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:900;letter-spacing:2px;color:#777;z-index:3}
+.camera-lens{
+  width:120px;height:120px;border-radius:50%;position:absolute;right:38px;bottom:24px;z-index:3;
+  background:radial-gradient(circle at 35% 30%,#75818a 0 8%,#30383e 9% 22%,#101417 23% 42%,#535d62 43% 49%,#16191b 50% 68%,#a6a7a4 69% 73%,#262727 74%);
+  border:7px solid #c3c2bc;box-shadow:0 8px 15px #0004, inset 0 0 12px #000;
+}
+.camera-lens:after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:#fff6;left:28px;top:22px;filter:blur(2px)}
+.camera-top-shutter{position:absolute;right:45px;top:-29px;width:46px;height:17px;border-radius:7px;background:var(--orange);border:1px solid #d4770b;z-index:4;box-shadow:0 2px 4px #0003}
+.camera-inner{position:relative;z-index:2}
+.camera-brand{display:flex;align-items:center;gap:8px;margin-bottom:18px;color:var(--blue);font-size:13px;font-weight:900;letter-spacing:1.5px}
+.camera-brand:before{content:"";width:12px;height:12px;border:3px solid var(--blue);border-radius:2px;display:block}
+.video-wrap{position:relative;background:#111;border-radius:17px;padding:12px;box-shadow:inset 0 2px 9px #000,0 4px 8px #0002}
+video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:#05090d;transform:scaleX(-1)}
+.lens-mark{position:absolute;bottom:20px;left:20px;padding:5px 8px;border-radius:5px;background:#0009;color:#fff;font-size:9px;letter-spacing:1px}
+.camera-controls{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;margin-top:18px}
+button{border:0;border-radius:10px;padding:14px 18px;font-weight:900;cursor:pointer;background:#fff;color:var(--blue-dark);font-size:14px;box-shadow:0 3px 0 #bbb8b0,0 6px 10px #0001;transition:.15s transform,.15s box-shadow}
+button:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 0 #aaa79f,0 8px 14px #0002}
+button:active:not(:disabled){transform:translateY(1px);box-shadow:0 2px 0 #aaa79f}
+button.primary{background:var(--orange);color:#172334;box-shadow:0 3px 0 #cb720c,0 6px 10px #0002}
+button:disabled{opacity:.42;cursor:not-allowed}
+.shutter-button{position:relative}.shutter-button:before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;background:#fff;margin-right:8px;vertical-align:-1px}
+.hint{font-size:11px;color:#777;margin:13px 2px 0;line-height:1.45;text-align:center}
+.status{font-size:12px;color:var(--blue);font-weight:700;text-align:center;margin-top:8px;min-height:16px}
+
+/* FOTO POLAROID / SAÍDA */
+.preview-wrap{display:flex;justify-content:center;position:relative}
+.preview-wrap:before{content:"";position:absolute;top:-26px;right:7%;width:55px;height:30px;background:var(--orange);transform:rotate(7deg);border-radius:4px;box-shadow:0 2px 3px #0002}
+.polaroid{
+  width:min(100%,570px);background:var(--paper);color:var(--blue);padding:18px 18px 58px;
+  border:1px solid #ddd9d0;box-shadow:0 25px 45px #0003,0 3px 8px #0001;
+  transform:rotate(1deg);position:relative;
+}
+.polaroid:after{content:"";position:absolute;left:50%;bottom:17px;transform:translateX(-50%);width:145px;height:6px;background:var(--orange);border-radius:50%;opacity:.9}
+.polaroid:before{content:"POLAROID • APRENDIZAGEM";position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:8px;font-weight:900;letter-spacing:2px;color:#aaa}
+.art{width:100%;aspect-ratio:4/5;display:block;background:#fff}canvas{width:100%;height:auto;display:block}
+.download{margin-top:14px;width:100%;background:var(--blue);color:#fff;box-shadow:0 3px 0 #032b57,0 6px 10px #0002}
+
+@media(max-width:900px){.studio{grid-template-columns:1fr;gap:28px}.camera-shell{max-width:600px;margin:auto;width:100%}.preview-wrap{order:-1}.polaroid{width:min(92vw,540px)}header{align-items:flex-start}.brand img{height:32px}}
+@media(max-width:560px){.app{padding:15px 12px 30px}header{padding:0 3px}.brand{display:none}.studio{gap:12px}.camera{padding:29px 18px 24px}.camera:before{left:34px;right:34px}.flash{left:40px}.viewfinder{right:45px}.camera-lens{width:90px;height:90px;right:24px;bottom:22px}.camera-controls{grid-template-columns:1fr}.polaroid{padding:12px 12px 52px}.preview-wrap:before{right:3%}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>📸 Passeio Fotográfico 2026</h1>
+      <p>Uma câmera Polaroid digital para registrar e gerar sua foto.</p>
+    </div>
+    <div class="brand"><img src="assets/ecos.png" alt="ECOS"></div>
+  </header>
+
+  <main class="studio">
+    <section class="camera-shell">
+      <div class="camera-top-shutter"></div>
+      <div class="camera">
+        <div class="flash"></div>
+        <div class="viewfinder"></div>
+        <div class="camera-label">INSTANT CAMERA</div>
+        <div class="camera-lens"></div>
+        <div class="camera-inner">
+          <div class="camera-brand">PASSEIO FOTOGRÁFICO 2026</div>
+          <div class="video-wrap">
+            <video id="video" autoplay playsinline muted></video>
+            <div class="lens-mark">● LIVE VIEW</div>
+          </div>
+          <div class="camera-controls">
+            <button id="start">Ativar câmera</button>
+            <button id="switchCamera" class="switch" disabled>↻ Virar câmera</button>
+            <button id="capture" class="primary shutter-button" disabled>Tirar foto</button>
+          </div>
+          <div class="hint">No celular, permita o acesso à câmera. A imagem é processada no próprio navegador.</div>
+          <div class="status" id="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-wrap">
+      <div class="polaroid">
+        <div class="art"><canvas id="result" width="1080" height="1350"></canvas></div>
+        <button id="download" class="download" disabled>Baixar foto em PNG</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+const video=document.getElementById('video');
+const result=document.getElementById('result');
+const ctx=result.getContext('2d');
+const startBtn=document.getElementById('start');
+const captureBtn=document.getElementById('capture');
+const switchBtn=document.getElementById('switchCamera');
+const downloadBtn=document.getElementById('download');
+const statusEl=document.getElementById('status');
+let stream=null;
+let facingMode='user';
+const ecos=new Image(),senac=new Image();
+ecos.src='assets/ecos.png'; senac.src='assets/senac.png';
+
+function roundedRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function brushText(text,x,y,maxWidth,size){ctx.save();ctx.font=`900 ${size}px "Arial Black","Trebuchet MS",sans-serif`;ctx.fillStyle='#06458b';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x,y,maxWidth);ctx.globalAlpha=.18;ctx.translate(2,1);ctx.fillText(text,x,y,maxWidth);ctx.restore()}
+function drawOrangeBrush(x1,y1,x2,y2){ctx.save();ctx.strokeStyle='#f7941d';ctx.lineCap='round';ctx.lineWidth=15;ctx.beginPath();ctx.moveTo(x1,y1);ctx.quadraticCurveTo((x1+x2)/2,y1-15,x2,y2);ctx.stroke();ctx.lineWidth=4;ctx.globalAlpha=.45;ctx.beginPath();ctx.moveTo(x1+5,y1+7);ctx.quadraticCurveTo((x1+x2)/2,y1-4,x2-8,y2+6);ctx.stroke();ctx.restore()}
+function coverDraw(source,sx,sy,sw,sh,dx,dy,dw,dh){const scale=Math.max(dw/sw,dh/sh);const nw=sw*scale,nh=sh*scale;const ox=dx+(dw-nw)/2,oy=dy+(dh-nh)/2;ctx.drawImage(source,sx,sy,sw,sh,ox,oy,nw,nh)}
+function drawFrame(photoSource){
+  const W=1080,H=1350;
+  ctx.clearRect(0,0,W,H);
+
+  // Papel artístico com textura
+  const paper=ctx.createLinearGradient(0,0,W,H);
+  paper.addColorStop(0,'#fffefb'); paper.addColorStop(.5,'#f8f6ef'); paper.addColorStop(1,'#fffdf8');
+  ctx.fillStyle=paper;ctx.fillRect(0,0,W,H);
+  for(let i=0;i<2800;i++){const x=Math.random()*W,y=Math.random()*H;ctx.globalAlpha=.035;ctx.fillStyle=i%2?'#06458b':'#f7941d';ctx.fillRect(x,y,1+Math.random()*2,1+Math.random()*2)}ctx.globalAlpha=1;
+
+  // Rabiscos decorativos de caderno / scrapbook
+  ctx.save();ctx.strokeStyle='#06458b';ctx.globalAlpha=.18;ctx.lineWidth=4;
+  ctx.beginPath();ctx.arc(80,110,28,0,Math.PI*1.6);ctx.stroke();
+  ctx.beginPath();ctx.arc(1000,103,22,Math.PI*.2,Math.PI*1.7);ctx.stroke();ctx.restore();
+
+  ctx.fillStyle='#06458b';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 72px "Arial Black",sans-serif';ctx.fillText('Passeio Fotográfico 2026',W/2,91,930);
+  drawOrangeBrush(105,142,315,136);drawOrangeBrush(770,136,975,142);
+
+  // Fita adesiva artística
+  ctx.save();ctx.translate(145,177);ctx.rotate(-.09);ctx.fillStyle='#f7941d';ctx.globalAlpha=.78;ctx.fillRect(0,0,145,42);ctx.globalAlpha=1;ctx.restore();
+  ctx.save();ctx.translate(812,170);ctx.rotate(.08);ctx.fillStyle='#06458b';ctx.globalAlpha=.88;ctx.fillRect(0,0,130,40);ctx.globalAlpha=1;ctx.restore();
+
+  // Moldura da fotografia: borda branca + sombra + cantos arredondados
+  ctx.save();ctx.shadowColor='#0004';ctx.shadowBlur=24;ctx.shadowOffsetY=12;ctx.fillStyle='#fff';roundedRect(ctx,43,190,994,735,18);ctx.fill();ctx.restore();
+  ctx.save();roundedRect(ctx,62,209,956,697,10);ctx.clip();coverDraw(photoSource,0,0,photoSource.videoWidth||photoSource.width,photoSource.videoHeight||photoSource.height,62,209,956,697);ctx.restore();
+  ctx.save();ctx.strokeStyle='#06458b';ctx.globalAlpha=.25;ctx.lineWidth=5;roundedRect(ctx,62,209,956,697,10);ctx.stroke();ctx.restore();
+
+  // Pequenas marcações de foto instantânea
+  ctx.fillStyle='#06458b';ctx.font='900 18px Arial';ctx.textAlign='left';ctx.fillText('INSTANT • 2026',70,950);
+  ctx.textAlign='right';ctx.fillStyle='#777';ctx.font='700 16px Arial';ctx.fillText('MEMÓRIA • APRENDIZAGEM',1010,950);
+
+  brushText('APRENDIZAGEM',W/2,1020,930,92);drawOrangeBrush(265,1085,815,1078);
+
+  // Logos
+  const ecosH=105,ecosW=ecos.width/ecos.height*ecosH;ctx.drawImage(ecos,(W/2)-350,1140,ecosW,ecosH);
+  ctx.fillStyle='#06458b';ctx.fillRect(W/2-18,1155,4,82);
+  const senacH=92,senacW=senac.width/senac.height*senacH;ctx.drawImage(senac,(W/2)+40,1147,senacW,senacH);
+
+  // Cantos pintados à mão
+  ctx.save();ctx.lineCap='round';
+  ctx.strokeStyle='#06458b';ctx.lineWidth=25;ctx.beginPath();ctx.moveTo(25,1318);ctx.lineTo(190,1268);ctx.stroke();
+  ctx.strokeStyle='#f7941d';ctx.lineWidth=14;ctx.beginPath();ctx.moveTo(35,1340);ctx.lineTo(205,1284);ctx.stroke();
+  ctx.strokeStyle='#06458b';ctx.lineWidth=25;ctx.beginPath();ctx.moveTo(1055,1318);ctx.lineTo(890,1268);ctx.stroke();
+  ctx.strokeStyle='#f7941d';ctx.lineWidth=14;ctx.beginPath();ctx.moveTo(1045,1340);ctx.lineTo(875,1284);ctx.stroke();ctx.restore();
+}
+function initialPreview(){
+  ctx.fillStyle='#f4f4f1';ctx.fillRect(0,0,result.width,result.height);ctx.fillStyle='#06458b';ctx.textAlign='center';ctx.font='900 54px Arial Black';ctx.fillText('Passeio Fotográfico 2026',540,90);ctx.font='900 86px Arial Black';ctx.fillText('APRENDIZAGEM',540,1030);ctx.fillStyle='#f7941d';ctx.fillRect(300,1080,480,12);
+  if(ecos.complete&&senac.complete){const eh=100,ew=ecos.width/ecos.height*eh;ctx.drawImage(ecos,170,1150,ew,eh);const sh=90,sw=senac.width/senac.height*sh;ctx.drawImage(senac,650,1155,sw,sh)}
+}
+Promise.all([new Promise(r=>ecos.onload=r),new Promise(r=>senac.onload=r)]).then(initialPreview);
+async function openCamera(mode=facingMode){
+  try{
+    if(stream) stream.getTracks().forEach(t=>t.stop());
+    stream=await navigator.mediaDevices.getUserMedia({
+      video:{facingMode:{exact:mode},width:{ideal:1920},height:{ideal:1080}},audio:false
+    });
+    video.srcObject=stream;
+    video.style.transform=mode==='user'?'scaleX(-1)':'none';
+    facingMode=mode;
+    captureBtn.disabled=false;
+    switchBtn.disabled=false;
+    startBtn.textContent='Câmera ativa';
+    switchBtn.textContent=mode==='user'?'↻ Câmera traseira':'↻ Câmera frontal';
+    statusEl.textContent=mode==='user'?'Câmera frontal ativa.':'Câmera traseira ativa.';
+  }catch(e){
+    // Alguns celulares/navegadores não aceitam exact. Tenta novamente com ideal.
+    try{
+      if(stream) stream.getTracks().forEach(t=>t.stop());
+      stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:mode},width:{ideal:1920},height:{ideal:1080}},audio:false});
+      video.srcObject=stream; video.style.transform=mode==='user'?'scaleX(-1)':'none'; facingMode=mode;
+      captureBtn.disabled=false; switchBtn.disabled=false; startBtn.textContent='Câmera ativa';
+      switchBtn.textContent=mode==='user'?'↻ Câmera traseira':'↻ Câmera frontal';
+      statusEl.textContent=mode==='user'?'Câmera frontal ativa.':'Câmera traseira ativa.';
+    }catch(err){statusEl.textContent='Não foi possível acessar esta câmera. Verifique a permissão do navegador.'}
+  }
+}
+startBtn.onclick=()=>openCamera(facingMode);
+switchBtn.onclick=()=>openCamera(facingMode==='user'?'environment':'user');
+captureBtn.onclick=()=>{drawFrame(video);downloadBtn.disabled=false;statusEl.textContent='Foto pronta! Você pode baixar a imagem em PNG.'};
+downloadBtn.onclick=()=>{const link=document.createElement('a');link.download='passeio-fotografico-2026-aprendizagem.png';link.href=result.toDataURL('image/png');link.click()};
+window.addEventListener('beforeunload',()=>{if(stream)stream.getTracks().forEach(t=>t.stop())});
+</script>
+</body>
+</html>
